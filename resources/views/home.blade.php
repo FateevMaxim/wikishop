@@ -452,7 +452,7 @@
                                                             <span class="star star-1"></span>
                                                             <div class="number-rating">( 896 reviews )</div>
                                                         </div>
-                                                        <p class="product-cate">{{ $product->brand->name }}</p>
+                                                        <p class="product-cate">@if (isset($product->brand->name)) {{ $product->brand->name }} @endif</p>
                                                         <p class="product-cate">Артикул: {{ $product->code }}</p>
                                                         <h3 class="product-title"><a href="{{ url('/product') }}">{{ $product->name }}</a></h3>
                                                         <div class="product-bottom">

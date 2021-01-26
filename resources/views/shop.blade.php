@@ -121,8 +121,8 @@
                                         <div class="element-list element-list-left">
                                             <ul class="desc-list">
                                                 <li>Артикул: {{ $product->code }}</li>
-                                                <li>{{ $product->memo }}</li>
-                                                <li>Бренд: {{ $product->brand->name }}</li>
+                                                @if (isset($product->brand->name))<li>{{ $product->memo }}</li>@endif
+                                                 @if (isset($product->brand->name)) <li>Бренд: {{ $product->brand->name }} </li>@endif
                                             </ul>
                                         </div>
                                         <div class="element-list element-list-middle">
