@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', '\App\Http\Controllers\MenuController@index')->name('index');
+Route::get('/', '\App\Http\Controllers\MenuController@shop')->name('index');
 Route::get('/shop', '\App\Http\Controllers\MenuController@shop')->name('shop');
-Route::get('/product/{id}', '\App\Http\Controllers\MenuController@product')->name('product');
+Route::get('/product/{id}/{brandId}', '\App\Http\Controllers\MenuController@product')->name('product');

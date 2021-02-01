@@ -126,7 +126,7 @@
                                     <div class="element hidden-xs hidden-sm">
                                         <a href="#">Помощь</a>
                                     </div>
-                                    <div class="element hidden-xs hidden-sm">
+                                    {{--<div class="element hidden-xs hidden-sm">
                                         <a href="#"><img src="img/icon-phone.png" alt=""><span>Установить приложение на смартфон</span></a>
                                     </div>
                                     <div class="element element-leaguage">
@@ -150,7 +150,7 @@
                                             <li><a href="#">RUR</a></li>
                                             <li><a href="#">USD</a></li>
                                         </ul>
-                                    </div>
+                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -314,10 +314,7 @@
                                         </button>
                                         <div class="collapse navbar-collapse" id="myNavbar">
                                             <ul class="nav navbar-nav js-menubar">
-                                                <li class="level1 active hassub"><a href="{{ url('/') }}">Главная</a>
-                                                    <span class="plus js-plus-icon"></span>
-                                                </li>
-                                                <li class="level1 dropdown hassub"><a href="{{ url('/shop') }}">Магазин<span class="h-ribbon h-pos e-green">Sale</span></a>
+                                                <li class="level1 dropdown hassub"><a href="{{ url('/shop') }}">Магазин{{--<span class="h-ribbon h-pos e-green">Sale</span>--}}</a>
                                                     <span class="plus js-plus-icon"></span>
                                                     <div class="menu-level-1 dropdown-menu">
                                                         <ul class="level1">

@@ -5,7 +5,6 @@
     <!--content-->
     <div class="container container-240 shop-collection">
         <ul class="breadcrumb">
-            <li><a href="{{ url('/') }}">Главная</a></li>
             <li class="active">Магазин</li>
         </ul>
         <div class="filter-collection-left hidden-lg hidden-md">
@@ -112,7 +111,7 @@
                                         <a href="{{ url('/product/'.$product->id) }}">
 
                                             @if (!$product->picture)
-                                                <a href="{{ url('/product/'.$product->id) }}"><img src="img/product/anker.jpg" alt="" class="img-reponsive"></a>
+                                                <a href="{{ url('/product/'.$product->id.'/'.$product->brand_id) }}"><img src="img/product/anker.jpg" alt="" class="img-reponsive"></a>
                                             @endif
                                             <img src="img/product/{{ $product->picture }}" alt="" class="img-reponsive"></a>
                                     </div>
@@ -121,7 +120,7 @@
                                         <div class="element-list element-list-left">
                                             <ul class="desc-list">
                                                 <li>Артикул: {{ $product->code }}</li>
-                                                @if (isset($product->brand->name))<li>{{ $product->memo }}</li>@endif
+                                                <li>{{ $product->memo }}</li>
                                                  @if (isset($product->brand->name)) <li>Бренд: {{ $product->brand->name }} </li>@endif
                                             </ul>
                                         </div>
@@ -135,10 +134,10 @@
                                                 <div class="number-rating">( 896 reviews )</div>
                                             </div>-->
                                             <p class="product-cate">Название категории</p>
-                                            <h3 class="product-title"><a href="{{ url('/product/'.$product->id) }}">{{ $product->name }}</a></h3>
+                                            <h3 class="product-title"><a href="{{ url('/product/'.$product->id.'/'.$product->brand_id) }}">{{ $product->name }}</a></h3>
                                             <div class="product-bottom">
                                                 <div class="product-price"><span>{{ $product->out_price }}</span></div>
-                                                <a href="{{ url('/product/'.$product->id) }}" class="btn-icon btn-view">
+                                                <a href="{{ url('/product/'.$product->id.'/'.$product->brand_id) }}" class="btn-icon btn-view">
                                                     <span class="icon-bg icon-view"></span>
                                                 </a>
                                             </div>
@@ -173,51 +172,52 @@
 
 
                         </div>
-                    </div>
-                    <div class="pd-middle space-v1">
-                        <ul class="pagination">
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#"><i class="ion-ios-arrow-forward"></i></a></li>
-                        </ul>
-                        <div class="pd-sort">
-                            <div class="filter-sort">
-                                <div class="dropdown">
-                                    <button class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <span class="dropdown-label">Сортировка по умолчанию</span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="manual">Избранные</a></li>
-                                        <li><a href="best-selling">Популярное</a></li>
-                                        <li><a href="title-ascending">По алфавиту, A-Я</a></li>
-                                        <li><a href="title-descending">По алфавиту, Я-А</a></li>
-                                        <li><a href="price-descending">Цена, по убыванию</a></li>
-                                        <li><a href="price-ascending">Цена, по возрастанию</a></li>
-                                        <li><a href="created-ascending">Дата, сначала старые</a></li>
-                                        <li><a href="created-descending">Дата, сначала новые</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter-show">
-                                <div class="dropdown">
-                                    <button class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Показать
-                                        <span class="dropdown-label">12</span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">20</a></li>
-                                        <li><a href="#">40</a></li>
-                                        <li><a href="#">80</a></li>
-                                        <li><a href="#">120</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                        <div class="col-sm-12 col-xs-12 text-center">
+                        {{ $products->links() }}
                         </div>
                     </div>
+                    {{-- <div class="pd-middle space-v1">
+
+                         <div class="pd-sort">
+                          {--<div class="filter-sort">
+                                 <div class="dropdown">
+                                     <button class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                         <span class="dropdown-label">Сортировка по умолчанию</span>
+                                     </button>
+                                     <ul class="dropdown-menu">
+                                         <li><a href="manual">Избранные</a></li>
+                                         <li><a href="best-selling">Популярное</a></li>
+                                         <li><a href="title-ascending">По алфавиту, A-Я</a></li>
+                                         <li><a href="title-descending">По алфавиту, Я-А</a></li>
+                                         <li><a href="price-descending">Цена, по убыванию</a></li>
+                                         <li><a href="price-ascending">Цена, по возрастанию</a></li>
+                                         <li><a href="created-ascending">Дата, сначала старые</a></li>
+                                         <li><a href="created-descending">Дата, сначала новые</a></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                             <div class="filter-show">
+                                 <div class="dropdown">
+                                     <button class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                         Показать
+                                         <span class="dropdown-label">15</span>
+                                     </button>
+                                     <ul class="dropdown-menu">
+                                         <li><a href="#">20</a></li>
+                                         <li><a href="#">40</a></li>
+                                         <li><a href="#">80</a></li>
+                                         <li><a href="#">120</a></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                     --}}
                 </div>
             </div>
         </div>
     </div>
-    <div class="e-category">
+    {{--<div class="e-category">
         <div class="container container-240">
             <div class="row">
                 <div class="col-xs-12 col-sm-4 col-md-4">
@@ -265,7 +265,7 @@
             </div>
         </div>
     </div>
-    <!--<div class="feature">
+    <div class="feature">
         <div class="container container-240">
             <div class="feature-inside">
                 <div class="feature-block text-center">
@@ -301,6 +301,6 @@
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>--}}
     <!-- / end content -->
 @endsection

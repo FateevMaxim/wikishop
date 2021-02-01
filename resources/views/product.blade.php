@@ -6,8 +6,7 @@
         <div class="container container-240">
              <div class="single-product-detail product-bundle product-aff">
                 <ul class="breadcrumb">
-                    <li><a href="{{ url('/') }}">Главная</a></li>
-                    <li class="active">Категория товаров</li>
+                    <li><a href="{{ url('/shop') }}">Магазин</a></li>
                     <li class="active">{{ $products->name }} </li>
                 </ul>
                 <div class="row">
@@ -173,7 +172,7 @@
             </div>
             <div class="bestseller">
                 <div class="ecome-heading style5v3 spc5v3">
-                    <h1>Связанные товары</h1>
+                    <h1>Этот же бренд</h1>
                     <a href="#" class="btn-show">Посмотреть ещё<i class="ion-ios-arrow-forward"></i></a>
                 </div>
                 <div class="owl-carousel owl-theme owl-cate v2 js-owl-cate">
@@ -182,7 +181,7 @@
                     <div class="product-item">
                         <div class="pd-bd product-inner">
                             <div class="product-img">
-                                <a href="{{ url('/product/'.$related->id) }}"><img src="{{ asset('img/product/'.$related->picture) }}" alt="" class="img-reponsive"></a>
+                                <a href="{{ url('/product/'.$related->id.'/'.$related->brand_id) }}"><img src="{{ asset('img/product/'.$related->picture) }}" alt="" class="img-reponsive"></a>
                             </div>
                             <div class="product-info">
                                 <div class="color-group">
@@ -191,15 +190,16 @@
                                 </div>
                                 <div class="element-list element-list-middle">
                                     <p class="product-cate">{{ $related->brand->name }}</p>
-                                    <h3 class="product-title"><a href="#">{{ $related->name }}</a></h3>
+                                    <h3 class="product-title"><a href="{{ url('/product/'.$related->id.'/'.$related->brand_id) }}">{{ $related->name }}</a></h3>
                                     <div class="product-bottom">
                                         <div class="product-price"><span>{{ $related->out_price }}</span></div>
-                                        <a href="{{ url('/product/'.$related->id) }}" class="btn-icon btn-view">
+                                        <a href="{{ url('/product/'.$related->id.'/'.$related->brand_id) }}" class="btn-icon btn-view">
                                             <span class="icon-bg icon-view"></span>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="product-button-group">
+
+                                {{--<div class="product-button-group">
                                     <a href="#" class="btn-icon">
                                         <span class="icon-bg icon-wishlist"></span>
                                     </a>
@@ -207,13 +207,14 @@
                                         <span class="icon-bg icon-compare"></span>
                                     </a>
                                 </div>
+                                --}}
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
             </div>
-            <div class="e-qa">
+            {{--<div class="e-qa">
                 <div class="cmt-title v2 text-center abs"><h1 class="oval-bd btn-gradient">Customer questions & answers</h1></div>
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6">
@@ -307,8 +308,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="bestseller single-space">
+            </div>--}
+            {{--<div class="bestseller single-space">
                 <div class="ecome-heading style5v3 spc5v3">
                     <h1>Этот же бренд</h1>
                     <a href="#" class="btn-show">Посмотреть ещё<i class="ion-ios-arrow-forward"></i></a>
@@ -349,9 +350,9 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
+            </div>--}}
         </div>
-        <div class="e-category">
+        {{--<div class="e-category">
             <div class="container container-240">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -398,6 +399,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
         <!-- / end content -->
 @endsection
