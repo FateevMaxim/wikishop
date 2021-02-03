@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="cbd5c6a5-aab2-42cb-8fa7-046124f5e724" name="wikistore" url="http://wikistore.kz">
+        <fileTransfer rootFolder="/var/www/wikistore.kz" accessType="SFTP" host="185.146.1.87" port="22" sshConfigId="db5b98c3-9018-406d-b001-d32bb3d4c15f" sshConfig="root@185.146.1.87:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
