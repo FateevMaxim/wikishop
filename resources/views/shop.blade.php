@@ -175,6 +175,7 @@
                         <div class="col-sm-12 col-xs-12 text-center">
                         {{ $products->links() }}
                         </div>
+                        {{ dd($productsWithImages) }}
                     </div>
                     {{-- <div class="pd-middle space-v1">
 

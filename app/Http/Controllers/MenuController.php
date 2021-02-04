@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\Images;
 use App\Models\Menu;
 use App\Models\ProductsMainPageModel;
 use Illuminate\Http\Request;
@@ -23,9 +24,10 @@ class MenuController extends Controller
     {
         $items = Menu::all();
         $products = ProductsMainPageModel::with(['brand'])->where('brand_id', '!=', '')->paginate(15);
+        $productsWithImages = Images::with(['image'])->paginate(15);
         $featureds = ProductsMainPageModel::where('online', 1)->orderByDesc('id')->take(3)->get();
         $brands = Brand::all()->take(6);
-        return view('shop', compact('items', 'products', 'featureds', 'brands'));
+        return view('shop', compact('items', 'products', 'featureds', 'brands', 'productsWithImages'));
 
     }
     /**
